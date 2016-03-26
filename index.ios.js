@@ -8,6 +8,7 @@ import React, {
   Component,
   StyleSheet,
   Text,
+  TextInput,
   View
 } from 'react-native';
 
@@ -15,16 +16,14 @@ class spy extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <View>
+            <Text style={{backgroundColor: '#FF0000', padding: 10, marginBottom: 10}}>New Game</Text>
+            <View style={{alignItems: 'center', flexDirection: 'row'}}>
+              <Text>Players</Text>
+              <TextInput style={{height: 40, marginLeft: 5, width: 30, borderColor: 'blue'}} value={ '3' } />
+            </View>
+          <Text style={{borderRadius: 10, marginTop: 10,  backgroundColor: '#00FF00', padding: 10}}>Go!</Text>
+        </View>
       </View>
     );
   }
@@ -35,18 +34,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    backgroundColor: '#F5FCFF'
+  }
 });
 
 AppRegistry.registerComponent('spy', () => spy);
